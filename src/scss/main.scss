@@ -14,6 +14,11 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -57,7 +62,6 @@ body {
 
   &__panel {
     width: 200px;
-    height: 60vh;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -68,7 +72,8 @@ body {
   }
 
   &__button {
-    width: 180px;
+    width: 200px;
+    height: 40px;
   }
 
   &__button--clear {
@@ -78,7 +83,23 @@ body {
 
   &__textarea {
     width: 60vw;
-    height: 60vh;
+    height: 40vh;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  min-width: 800px;
+  background: grey;
+  height: 120px;
+
+  &__text {
+    margin: 0;
+    position: relative;
+    padding: 4px;
   }
 }
 
@@ -89,4 +110,8 @@ body {
 
 .fa-pen {
   padding-right: 4px;
+}
+
+.fa-running {
+  margin-right: 2px;
 }
