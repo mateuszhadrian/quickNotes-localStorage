@@ -1,6 +1,6 @@
 @import "_normalize";
 @import "_variables";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap');
 
 
 html {
@@ -20,6 +20,7 @@ body {
   min-height: 100vh;
   width: 100%;
   font-family: 'Open Sans', sans-serif;
+  background: $realwhite;
 }
 
 .header {
@@ -28,8 +29,9 @@ body {
   align-items: center;
   width: 100%;
   min-width: 800px;
-  background: grey;
+  background: $lightblue;
   height: 120px;
+  box-shadow: 1px 5px 12px $darkblue-opa;
 
   &__container {
     display: flex;
@@ -43,6 +45,7 @@ body {
   }
 
   &__title {
+    color: $darkblue;
     font-size: 36px;
   }
 }
@@ -74,16 +77,43 @@ body {
   &__button {
     width: 200px;
     height: 40px;
-  }
+    font-size: 12px;
+    font-weight: 600;
+    background: $lightblue;
+    color: $realwhite;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    transition: background 0.2s;
 
-  &__button--clear {
-    position: relative;
-    bottom: 0;
+    &:hover {
+      background: $darkblue;
+    }
+    &:active {
+      background: rgb(0, 0, 0);
+    }
+
+    &--clear{
+      background: $lightred;
+      &:hover {
+        background: $red;
+      }
+      &:active {
+        background: rgb(0, 0, 0);
+      }
+    }
+    &--save {
+      margin-top: 8px;
+    }
   }
 
   &__textarea {
     width: 60vw;
     height: 40vh;
+    border-radius: 8px;
+    padding: 20px;
+    outline: none;
+    font-weight: 600;
   }
 }
 
@@ -93,10 +123,12 @@ body {
   align-items: flex-end;
   width: 100%;
   min-width: 800px;
-  background: grey;
+  background: $lightblue;
   height: 120px;
+  box-shadow: 1px -2px 7px $darkblue-opa;
 
   &__text {
+    color: $darkblue;
     margin: 0;
     position: relative;
     padding: 4px;
