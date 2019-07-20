@@ -1,22 +1,16 @@
-"use strict";
+const loadButton = document.querySelector(".main__button--load-js");
+const saveButton = document.querySelector(".main__button--save-js");
+const clearButton = document.querySelector(".main__button--clear-js");
+const textarea = document.querySelector(".main__textarea--js")
 
-// service worker registration - remove if you're not going to use it
+saveButton.addEventListener('click', (e) => {
+  localStorage.setItem('text', textarea.value);
+});
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('serviceworker.js').then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
+loadButton.addEventListener('click', (e) => {
+  textarea.value = localStorage.getItem('text');
+});
 
-// place your code below
-
-
-console.log(`Hello world!`);
-
-
+clearButton.addEventListener('click', (e) => {
+  textarea.value = "";
+});
