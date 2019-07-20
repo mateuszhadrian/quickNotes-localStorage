@@ -1,16 +1,92 @@
 @import "_normalize";
 @import "_variables";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 
 html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
-  color: $yellow;
-  background: $violet;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 800px;
+  background: grey;
+  height: 120px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 80%;
+  }
+
+  &__brand {
+    font-size: 28px;
+  }
+
+  &__title {
+    font-size: 36px;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 800px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  &__panel {
+    width: 200px;
+    height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  &__panel-bottom {
+  align-self: flex-end;    
+  }
+
+  &__button {
+    width: 180px;
+  }
+
+  &__button--clear {
+    position: relative;
+    bottom: 0;
+  }
+
+  &__textarea {
+    width: 60vw;
+    height: 60vh;
+  }
+}
+
+.fa-user {
+  font-size: 46px;
+  padding-right: 10px;
+}
+
+.fa-pen {
+  padding-right: 4px;
 }
